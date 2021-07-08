@@ -14,7 +14,7 @@ For more information about the API, please visit the official documentation at <
 * Install nuget package Fortnox.NET.SDK
 * Start coding
 
-```CSharp
+```csharp
 var fortnoxClient = new FortnoxClient("MyAccessToken", "MyClientSecret");
 
 var customer = new Customer()
@@ -41,7 +41,7 @@ client.CustomerConnector.Create(customer);
 
 ```
 The MIT License (MIT)
-Copyright (c) 2021 Softwerk AB
+Copyright (c) 2020–2021 Softwerk AB
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
