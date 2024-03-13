@@ -114,6 +114,10 @@ public class Order
     ///<summary> Delivery name </summary>
     [JsonProperty]
     public string DeliveryName { get; set; }
+    
+    [WarehouseRequired]
+    [JsonProperty]
+    public DeliveryState? DeliveryState { get; set; }
 
     ///<summary> Delivery zip code </summary>
     [JsonProperty]
@@ -158,6 +162,14 @@ public class Order
     [ReadOnly]
     [JsonProperty]
     public long? InvoiceReference { get; private set; }
+    
+    ///<summary> The properties for the object in this array is listed in the table “Labels” </summary>
+    [JsonProperty]
+    public IList<LabelReference> Labels { get; set; }
+    
+    ///<summary> Language code. Can be SV or EN. </summary>
+    [JsonProperty]
+    public Language? Language { get; set; }
 
     ///<summary> Net amount </summary>
     [ReadOnly]
@@ -215,6 +227,10 @@ public class Order
     [JsonProperty]
     public string Project { get; set; }
 
+    /// <summary> The date that the document was marked as ready in warehouse. </summary>
+    [JsonProperty]
+    public DateTime? OutboundDate { get; set; }
+
     ///<summary> Remarks on order </summary>
     [JsonProperty]
     public string Remarks { get; set; }
@@ -228,6 +244,14 @@ public class Order
     [ReadOnly]
     [JsonProperty]
     public bool? Sent { get; private set; }
+    
+    /// <summary> The stock point that the items are to taken from or has been taken from. </summary>
+    [JsonProperty]
+    public string StockPointCode { get; set; }
+
+    /// <summary> The stock point that the items are to taken from or has been taken from. </summary>
+    [JsonProperty]
+    public string StockPointId { get; set; }
 
     ///<summary> Amount of the Taxreduction </summary>
     [ReadOnly]
@@ -250,6 +274,11 @@ public class Order
     [ReadOnly]
     [JsonProperty]
     public decimal? Total { get; private set; }
+    
+    ///<summary> Total amount to pay </summary>
+    [ReadOnly]
+    [JsonProperty]
+    public decimal? TotalToPay { get; private set; }
 
     ///<summary> Total vat amount </summary>
     [ReadOnly]
@@ -263,6 +292,11 @@ public class Order
     ///<summary> Code of delivery </summary>
     [JsonProperty]
     public string WayOfDelivery { get; set; }
+    
+    /// <summary> Used to see if the document has been marked as ready in warehouse. </summary>
+    [ReadOnly]
+    [JsonProperty]
+    public bool? WarehouseReady { get; private set; }
 
     ///<summary> Customer reference </summary>
     [JsonProperty]
@@ -275,33 +309,4 @@ public class Order
     ///<summary> Order zip code </summary>
     [JsonProperty]
     public string ZipCode { get; set; }
-
-    /// <summary> The stock point that the items are to taken from or has been taken from. </summary>
-    [JsonProperty]
-    public string StockPointCode { get; set; }
-
-    /// <summary> The stock point that the items are to taken from or has been taken from. </summary>
-    [JsonProperty]
-    public string StockPointId { get; set; }
-
-    /// <summary> Used to see if the document has been marked as ready in warehouse. </summary>
-    [ReadOnly]
-    [JsonProperty]
-    public bool? WarehouseReady { get; private set; }
-
-    /// <summary> The date that the document was marked as ready in warehouse. </summary>
-    [JsonProperty]
-    public DateTime? OutboundDate { get; set; }
-
-    [WarehouseRequired]
-    [JsonProperty]
-    public DeliveryState? DeliveryState { get; set; }
-
-    ///<summary> The properties for the object in this array is listed in the table “Labels” </summary>
-    [JsonProperty]
-    public IList<LabelReference> Labels { get; set; }
-
-    ///<summary> Language code. Can be SV or EN. </summary>
-    [JsonProperty]
-    public Language? Language { get; set; }
 }

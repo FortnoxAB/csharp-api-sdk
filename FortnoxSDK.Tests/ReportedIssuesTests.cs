@@ -190,7 +190,7 @@ public class ReportedIssuesTests
             InvoiceDate = new DateTime(2010, 1, 1),
             DueDate = new DateTime(2010, 2, 1),
             SalesType = SalesType.Stock,
-            OCR = "123456789",
+            OCR = "1234567897",
             Total = 5000,
             SupplierInvoiceRows = new List<SupplierInvoiceRow>()
             {

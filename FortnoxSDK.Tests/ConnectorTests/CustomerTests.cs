@@ -79,6 +79,7 @@ public class CustomerTests
         #endregion Arrange
 
         var testKeyMark = TestUtils.RandomString();
+        var testPhone1 = "111111111";
 
         var connector = FortnoxClient.CustomerConnector;
         var newCustomer = new Customer()
@@ -92,7 +93,8 @@ public class CustomerTests
             Email = "testCustomer@test.com",
             Type = CustomerType.Private,
             Active = false,
-            Comments = testKeyMark
+            Comments = testKeyMark,
+            Phone1 = testPhone1
         };
 
         //Add entries
@@ -102,7 +104,11 @@ public class CustomerTests
         }
 
         //Apply base test filter
-        var searchSettings = new CustomerSearch();
+        var searchSettings = new CustomerSearch
+        {
+            City = testKeyMark,
+            Phone = testPhone1
+        };
         searchSettings.City = testKeyMark;
         var fullCollection = await connector.FindAsync(searchSettings);
 

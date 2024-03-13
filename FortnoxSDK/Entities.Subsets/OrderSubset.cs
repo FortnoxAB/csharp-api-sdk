@@ -60,4 +60,9 @@ public class OrderSubset
     [ReadOnly]
     [JsonProperty]
     public decimal? Total { get; private set; }
+    
+    ///<summary> Total amount to pay </summary>
+    [ReadOnly]
+    [JsonProperty]
+    public decimal? TotalToPay { get; private set; }
 }

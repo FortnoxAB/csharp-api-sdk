@@ -1,3 +1,5 @@
+using System;
+
 namespace Fortnox.SDK.Search;
 
 public class CustomerSearch : BaseSearch
@@ -23,6 +25,9 @@ public class CustomerSearch : BaseSearch
 
     [SearchParameter]
     public string GLNDelivery { get; set; }
+    
+    [SearchParameter]
+    public DateTime LastModified { get; set; }
 
     [SearchParameter]
     public string Name { get; set; }
@@ -31,7 +36,7 @@ public class CustomerSearch : BaseSearch
     public string OrganisationNumber { get; set; }
 
     [SearchParameter]
-    public string Phone1 { get; set; }
+    public string Phone { get; set; }
 
     [SearchParameter]
     public string ZipCode { get; set; }
